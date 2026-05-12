@@ -1,3 +1,4 @@
+import os
 from datetime import datetime, timedelta
 
 from fastapi import Depends, FastAPI, HTTPException, status
@@ -10,7 +11,7 @@ from sqlalchemy import Column, DateTime, ForeignKey, Integer, String, create_eng
 from sqlalchemy.orm import DeclarativeBase, Session, relationship, sessionmaker
 
 DATABASE_URL = "sqlite:///./tetris.db"
-SECRET_KEY = "tetris-secret-key-change-in-production-2024"
+SECRET_KEY = os.environ["SECRET_KEY"]
 ALGORITHM = "HS256"
 TOKEN_EXPIRE_HOURS = 24
 

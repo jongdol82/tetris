@@ -36,6 +36,7 @@
 ```bash
 cd backend
 pip install -r requirements.txt
+cp .env.example .env   # SECRET_KEY 설정
 uvicorn main:app --reload
 ```
 
